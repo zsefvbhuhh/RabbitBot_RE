@@ -36,14 +36,17 @@ public class LoliconRequest extends BaseRequest {
     public void doRequest() throws IOException {
         //拼装参数
         addParam();
-
         body = new String(HttpsUtil.doGet(URL + HttpUtil.parseUrlEncode(param)));
     }
 
     //拼装参数
     private void addParam() {
-        param.put("r18", r18);
         param.put("apiKey", apiKey);
+        param.put("r18", r18);
+        param.put("keyword", keyword);
+        param.put("num", num);
+        param.put("proxy", proxy);
+        param.put("size1200", size1200);
     }
 
 }
