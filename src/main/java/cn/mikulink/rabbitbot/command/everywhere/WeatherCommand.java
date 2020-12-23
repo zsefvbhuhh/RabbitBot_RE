@@ -30,6 +30,11 @@ public class WeatherCommand implements EverywhereCommand {
     private WeatherService weatherService;
 
     @Override
+    public CommandProperties properties() {
+        return new CommandProperties("天气", "天气");
+    }
+
+    @Override
     public Message execute(User sender, ArrayList<String> args, MessageChain messageChain, Contact subject) {
         if (null == args || args.size() == 0) {
             return null;
@@ -45,8 +50,5 @@ public class WeatherCommand implements EverywhereCommand {
         return new PlainText(result);
     }
 
-    @Override
-    public CommandProperties properties() {
-        return new CommandProperties("天气", "天气");
-    }
+
 }
